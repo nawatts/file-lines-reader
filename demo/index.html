@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Demo</title>
+</head>
+<body>
+
+  <label for="num-lines">Number of lines to read</label>
+  <input id="num-lines" name="num-lines" type="number" min="0" max="100" step="1" value="3"/>
+  <button id="read-btn">Read</button>
+
+  <hr/>
+
+  <pre id="output"></pre>
+
+  <script src="file-lines-reader.js"></script>
+  <script>
+    var alphabet = Array.apply(null, Array(26)).map(function(_, i) { return String.fromCharCode(97 + i); });
+    var b = new Blob([alphabet.join('\n') + '\n']);
+
+    var reader = new FileLinesReader(b);
+
+    var numLinesInput = document.getElementById('num-lines');
+    var output = document.getElementById('output');
+
+    document.getElementById('read-btn').onclick = function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+
+      var numLines = parseInt(numLinesInput.value, 10);
+      if (!isNaN(numLines)) {
+        reader.readLines(numLines).then(function(lines) {
+          output.innerHTML += lines.join('\n') + '\n';
+        });
+      }
+    };
+  </script>
+</body>
+</html>
