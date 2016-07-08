@@ -4,6 +4,5 @@
   globals:
     expect: false
   rules:
-    func-names: 0
     no-var: 0
     prefer-arrow-callback: 0

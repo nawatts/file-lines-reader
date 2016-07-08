@@ -6,4 +6,5 @@
     browser: true
   rules:
     # http://eslint.org/docs/rules/
+    func-names: 0
     no-console: 0
