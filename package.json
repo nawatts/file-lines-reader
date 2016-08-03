@@ -9,7 +9,7 @@
   "main": "lib/file-lines-reader.js",
   "scripts": {
     "build": "mkdirp lib && babel src/FileLinesReader.js > lib/file-lines-reader.js",
-    "build:dist": "mkdirp lib && NODE_ENV=production babel src/FileLinesReader.js | uglifyjs --compress --mangle - > lib/file-lines-reader.js",
+    "build:dist": "npm run clean && mkdirp lib && NODE_ENV=production babel src/FileLinesReader.js | uglifyjs --compress --mangle - > lib/file-lines-reader.js",
     "build:demo": "cat node_modules/babel-polyfill/dist/polyfill.js lib/file-lines-reader.js > demo/file-lines-reader.js",
     "start": "http-server demo -o",
     "prestart": "npm run build:demo",
