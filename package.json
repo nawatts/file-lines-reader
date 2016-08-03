@@ -1,11 +1,22 @@
 {
   "name": "file-lines-reader",
-  "version": "0.1.0",
+  "description": "Read some lines from a file",
+  "version": "1.0.0",
   "author": {
     "name": "Nick Watts",
     "email": "nick@nawatts.com"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nawatts/file-lines-reader.git"
+  },
+  "homepage": "https://github.com/nawatts/file-lines-reader",
+  "bugs": "https://github.com/nawatts/file-lines-reader/issues",
+  "keywords": [
+    "file-reader",
+    "partial"
+  ],
   "main": "lib/file-lines-reader.js",
   "scripts": {
     "build": "mkdirp lib && babel src/FileLinesReader.js > lib/file-lines-reader.js",
